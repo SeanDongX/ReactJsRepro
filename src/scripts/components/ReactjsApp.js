@@ -10,7 +10,7 @@ var ReactTransitionGroup = React.addons.TransitionGroup;
 require('../../styles/normalize.css');
 require('../../styles/main.css');
 
-var Book = require('./Book');
+var Shelf = require('./Shelf');
 
 var imageURL = require('../../images/yeoman.png');
 
@@ -28,13 +28,7 @@ var ReactjsApp = React.createClass({
     return (
       <div className='main'>
         <ReactTransitionGroup transitionName="fade">
-        	<p>{books.length} books in total</p>
-        	<div className='appContainer'>
-        	{ books.map(function(book, i){
-
-        		return <Book name={book.name} year={book.year} author={book.author}/> ;
-        	})}
-        	</div>
+        	<Shelf books={books}/>
         </ReactTransitionGroup>
       </div>
     );
